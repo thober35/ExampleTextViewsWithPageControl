@@ -1,24 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExampleTextViewsWithPageControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-My-bnE" userLabel="TextViewHolder">
+                                <rect key="frame" x="0.0" y="393" width="414" height="110"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="qMY-BJ-GDg" userLabel="UIPageControl">
+                                        <rect key="frame" x="0.0" y="90" width="414" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="2bE-IX-33K"/>
+                                        </constraints>
+                                        <color key="pageIndicatorTintColor" systemColor="systemTealColor"/>
+                                        <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor"/>
+                                    </pageControl>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I05-nA-v6M" userLabel="TextViewScrollView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32g-dW-Cf0" userLabel="TextView1">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="Pb2-5B-pdP"/>
+                                                </constraints>
+                                                <string key="text">This is TextView 1. You may swipe to get to the next TextView. But to fill this TextView I will just write some basic filler text.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableHtmlText" value="billing_description_1"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBl-OE-xDL" userLabel="TextView2">
+                                                <rect key="frame" x="414" y="0.0" width="414" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="jOF-EP-q8m"/>
+                                                </constraints>
+                                                <string key="text">This is Text View 2. Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor indcidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableHtmlText" value="billing_description_2"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-7V-Wa6" userLabel="TextView3">
+                                                <rect key="frame" x="828" y="0.0" width="414" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="1Rf-v6-xIB"/>
+                                                </constraints>
+                                                <string key="text">This is Text View 3. Displaying text like this may free up your ui. I'm just typing text at this point, don't mind me. Lorem ipsum and so on and so forth</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableHtmlText" value="billing_description_3"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gBl-OE-xDL" firstAttribute="leading" secondItem="32g-dW-Cf0" secondAttribute="trailing" id="53T-Uh-SBx"/>
+                                            <constraint firstItem="32g-dW-Cf0" firstAttribute="width" secondItem="I05-nA-v6M" secondAttribute="width" id="D4j-cj-SJ7"/>
+                                            <constraint firstAttribute="bottom" secondItem="gBl-OE-xDL" secondAttribute="bottom" id="ER7-Pk-ziD"/>
+                                            <constraint firstItem="Tvd-7V-Wa6" firstAttribute="leading" secondItem="gBl-OE-xDL" secondAttribute="trailing" id="H4i-LE-fTz"/>
+                                            <constraint firstItem="gBl-OE-xDL" firstAttribute="top" secondItem="I05-nA-v6M" secondAttribute="top" id="KM4-0V-d7i"/>
+                                            <constraint firstItem="Tvd-7V-Wa6" firstAttribute="width" secondItem="I05-nA-v6M" secondAttribute="width" id="M1c-L1-uiS"/>
+                                            <constraint firstItem="gBl-OE-xDL" firstAttribute="width" secondItem="I05-nA-v6M" secondAttribute="width" id="MKc-Ix-cbm"/>
+                                            <constraint firstItem="32g-dW-Cf0" firstAttribute="leading" secondItem="I05-nA-v6M" secondAttribute="leading" id="Rco-Tl-qLe"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tvd-7V-Wa6" secondAttribute="bottom" id="Xui-2o-Bga"/>
+                                            <constraint firstAttribute="bottom" secondItem="32g-dW-Cf0" secondAttribute="bottom" id="ZlE-4s-8eR"/>
+                                            <constraint firstItem="32g-dW-Cf0" firstAttribute="top" secondItem="I05-nA-v6M" secondAttribute="top" id="hxh-Uq-Aa6"/>
+                                            <constraint firstItem="Tvd-7V-Wa6" firstAttribute="top" secondItem="I05-nA-v6M" secondAttribute="top" id="svn-ry-gwp"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tvd-7V-Wa6" secondAttribute="trailing" id="umb-ZF-2ZR"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="ukB-MF-7AR"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="d31-ng-vyJ"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="6Z8-Qu-44w"/>
+                                    <constraint firstItem="I05-nA-v6M" firstAttribute="top" secondItem="sBn-My-bnE" secondAttribute="top" id="Ne9-I1-HC7"/>
+                                    <constraint firstAttribute="trailing" secondItem="qMY-BJ-GDg" secondAttribute="trailing" id="Oh4-3Y-fec"/>
+                                    <constraint firstAttribute="trailing" secondItem="I05-nA-v6M" secondAttribute="trailing" id="Q5n-Ls-r9Z"/>
+                                    <constraint firstItem="qMY-BJ-GDg" firstAttribute="top" secondItem="I05-nA-v6M" secondAttribute="bottom" constant="5" id="Vil-Fh-dgG"/>
+                                    <constraint firstItem="qMY-BJ-GDg" firstAttribute="leading" secondItem="sBn-My-bnE" secondAttribute="leading" id="arV-bl-uJq"/>
+                                    <constraint firstItem="I05-nA-v6M" firstAttribute="leading" secondItem="sBn-My-bnE" secondAttribute="leading" id="dbV-fH-9wN"/>
+                                    <constraint firstItem="I05-nA-v6M" firstAttribute="centerX" secondItem="sBn-My-bnE" secondAttribute="centerX" id="iTC-wf-lxX"/>
+                                    <constraint firstAttribute="bottom" secondItem="qMY-BJ-GDg" secondAttribute="bottom" id="zSZ-Fo-gys"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="sBn-My-bnE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YtH-9C-exg"/>
+                            <constraint firstItem="sBn-My-bnE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eU4-bF-WNa"/>
+                            <constraint firstItem="sBn-My-bnE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o30-4i-7lx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sBn-My-bnE" secondAttribute="trailing" id="wpn-9R-0IG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageController" destination="qMY-BJ-GDg" id="8qA-bS-3e0"/>
+                        <outlet property="scrollView" destination="I05-nA-v6M" id="mLk-Um-lQc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="107" y="89"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

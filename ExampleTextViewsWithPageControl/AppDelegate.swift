@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ExampleTextViewsWithPageControl
-//
-//  Created by Thomas on 25.06.21.
-//
-
 import UIKit
 
 @main
